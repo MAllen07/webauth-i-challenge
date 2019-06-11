@@ -1,10 +1,9 @@
 const express = require('express');
 const helmet = require('helmet');
 const cors = require('cors');
-const bcrypt = require('bcryptjs');
 
-const db = require('./Data/dbConfig');
-const Users = require('./users/users-model');
+const usersRouter = require('../users/users-router');
+const authRouter = require('../auth/auth-router');
 
 const server = express();
 
@@ -15,3 +14,8 @@ server.use(cors());
 server.get('/', (req, res) => {
     res.send("It's alive!");
 });
+
+server.use('/api/users', usersRouter);
+server.use('/api/auth', authRouter);
+
+module.exports = server;
