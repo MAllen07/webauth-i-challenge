@@ -12,8 +12,8 @@ const protect = require("./auth/protect.js");
 
 // Configure Session
 const sessionConfig = {
-  name: "Patty's Playhouse", // defaults to sid otherwise.
-  secret: "Secret, secret, I got a secret.", // could use a process.env variable to hide this.
+  name: "hello everyone", // defaults to sid otherwise.
+  secret: "Shhhh", // could use a process.env variable to hide this.
   cookie: {
     httpOnly: true, //prevents access from JS code.
     maxAge: 1000 * 60 * 10, //milliseconds. This is 10mins.
@@ -23,8 +23,8 @@ const sessionConfig = {
   saveUninitialized: true, //create new session automatically. Be sure to comply with law reqs.
   store: new KnexSessionStore({
     tablename: "sessions",
-    sidfieldname: "sid",
-    knex: db,
+    sidfieldname: "sid", 
+    knex: require("./Data/migrations/dbConfig"),    
     createtable: true,
     clearInterval: 1000 * 60 * 30
   })
@@ -44,7 +44,7 @@ server.use(express.json());
 server.get("/", (req, res) => {
   const username = req.session.username || "person";
 
-  res.send({ message: `Hello, ${username}, Mindy here!` });
+  res.send({ message: `Hi, ${username}, Mindy here!` });
 });
 
 // Get Users.

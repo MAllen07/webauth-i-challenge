@@ -1,5 +1,5 @@
 {
-  "name": "webauth-i-challenge",
+  "name": "webauth-i-challenge", 
   "version": "1.0.0",
   "description": "## Topics",
   "main": "index.js",
@@ -12,14 +12,16 @@
     "helmet": "^3.18.0",
     "knex": "^0.17.5",
     "node": "^12.4.0",
-    "sqlite3": "^4.0.8"
-  },
+    "sqlite3": "^4.0.8"     
+    
+    
+  },     
   "devDependencies": {
     "nodemon": "^1.19.1"
   },
-  "scripts": {
-    "server": "nodemon index. js",
-    "start": " node index.js"
+  "scripts": {  
+    "server": "nodemon index.js",
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",
@@ -33,3 +35,4 @@
   },
   "homepage": "https://github.com/MAllen07/webauth-i-challenge#readme"
 }
+

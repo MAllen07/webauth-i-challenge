@@ -12,6 +12,6 @@ module.exports = {
     },
     migrations: {
       directory: "./database/migrations"
-    }
+    },
   }
 };
