@@ -24,7 +24,7 @@ const sessionConfig = {
   store: new KnexSessionStore({
     tablename: "sessions",
     sidfieldname: "sid", 
-    knex: require("./Data/migrations/dbConfig"),    
+    knex: require("./data/dbConfig"),    
     createtable: true,
     clearInterval: 1000 * 60 * 30
   })

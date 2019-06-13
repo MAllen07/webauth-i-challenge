@@ -1,4 +1,4 @@
-const knex = require("knex");
+const knex = require("../node_modules/knex");
 
 const knexConfig = require("../knexfile");
 

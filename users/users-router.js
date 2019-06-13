@@ -1,11 +1,11 @@
 const express = require("express");
 
 const Users = require("../users/users-model");
-const restricted = require("../auth/restricted.js");
+const protect = require("../auth/protect");
 
 const router = express.Router();
 
-router.get("/", restricted, (req, res) => {
+router.get("/", protect, (req, res) => {
   Users.find()
     .then(users => {
       res.json(users);
